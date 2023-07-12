@@ -1,3 +1,13 @@
+# Sample abp service proxy generation
+
+- Para generar los service proxy y models se hizo uso del comando "abp generate-proxy -t ng", es recomendable que las librerias de backend y front sean tengan la misma version, el generador de proxy de abp, se requiere que sea de la misma verion del proyecto angular.
+
+uninstall tool
+dotnet tool uninstall -g Volo.Abp.Cli
+
+install tool
+dotnet tool install -g Volo.Abp.Cli --version 6.0.3
+
 # AngularBootstrap
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
