@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookDto, BookService } from './proxy';
-import { PagedAndSortedResultRequestDto, PagedResultDto } from '@abp/ng.core';
+import { CurrentUserDto, PagedAndSortedResultRequestDto, PagedResultDto } from '@abp/ng.core';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +17,14 @@ export class AppComponent implements OnInit {
 
   constructor(private bookService: BookService) {}
   ngOnInit(): void {
+    
+    let currentUser = {
+      id:"",
+      isAuthenticated: true,
+      name:"",
+      surName:""
+    } as CurrentUserDto;
+
     this.bookService
       .getList({} as PagedAndSortedResultRequestDto)
       .subscribe((response) => {
